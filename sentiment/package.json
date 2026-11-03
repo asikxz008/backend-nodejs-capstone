@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,10 @@
     "express-pino-logger": "^7.0.0",
     "nodemon": "^3.0.3",
     "pino": "^8.19.0",
-    "pino-pretty": "^10.3.1"
+    "pino-pretty": "^10.3.1",
+    "natural": "^6.12.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4"
   }
 }
