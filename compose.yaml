@@ -1,0 +1,17 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+  web:
+    build: .
+    ports:
+      - '127.0.0.1:3060:3060'
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+      MONGO_DB: secondChance
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET before starting}
+    depends_on:
+      - mongo
+volumes:
+  mongo-data:
