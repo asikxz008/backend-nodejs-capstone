@@ -1,7 +1,7 @@
 FROM node:22-alpine AS frontend
 WORKDIR /frontend
 COPY secondChance-frontend/package*.json ./
-RUN npm ci --no-audit --no-fund
+RUN npm install --no-audit --no-fund
 COPY secondChance-frontend/ ./
 RUN CI=false npm run build
 
